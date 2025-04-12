@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Flagomania</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+      type="module"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Flagomania</h1>
+
+        <p>
+          <span class="bold-start"
+            >Welcome to Flagomania – a fun and educational game for the whole
+            family!</span
+          >
+          Test your knowledge of Europe flags by guessing the country each flag
+          represents. Click the button to reveal a random flag and try to guess
+          it before checking the answer. It's a great way to learn about
+          different countries, cultures, and geography while having fun. Play
+          together, challenge each other, and turn learning into an exciting
+          game!
+        </p>
+      </div>
+
+      <div class="flag-card">
+        <!-- Lottie animation shown initially -->
+        <div class="lottie-container" id="lottieContainer">
+          <dotlottie-player
+            src="https://lottie.host/9f237328-cf19-452b-b94f-86ff8da0339c/5W2c2c4DX0.json"
+            background="transparent"
+            speed="1"
+            style="width: 300px; height: 300px"
+            loop
+            autoplay
+          ></dotlottie-player>
+        </div>
+
+        <!-- Flag image (hidden by default) -->
+        <img
+          id="flagImage"
+          class="flag-img hidden"
+          src=""
+          alt="Flag will appear here"
+        />
+
+        <!-- Country info (hidden by default) -->
+        <h2 id="countryName" class="hidden"></h2>
+        <p id="countryDesc" class="country-info hidden"></p>
+
+        <h2 id="instructionsTitle">Guess the flag!</h2>
+        <p id="instructionsText" class="country-info">
+          <span class="change-color">Click the button </span>
+          to see a random flag from somewhere in Europe. Try to guess the
+          country in your head — if you're not sure, click "Reveal Country" to
+          check the answer.
+        </p>
+
+        <div class="buttons">
+          <button class="get-btn" onclick="showRandomFlag()">Get flag</button>
+          <button class="reveal-btn" onclick="revealCountry()" disabled>
+            Reveal Country
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

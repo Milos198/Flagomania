@@ -1,0 +1,213 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Roboto+Mono:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Roboto+Mono:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  width: 100%;
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  min-width: 29.8125rem;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0) -2.13%,
+      rgba(0, 0, 0, 0.2) 104.95%
+    ),
+    url(Bg\ PIC.jpg) lightgray 50% / cover no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+::selection {
+  background-color: #ffd42e; /* Žuta pozadina */
+  color: #222; /* Tamna boja teksta */
+}
+
+.container {
+  max-width: 100%;
+  min-width: 29.8125rem;
+  justify-self: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  height: 100vh;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #222;
+  max-width: 70%;
+  min-width: 29.8125rem;
+  gap: 1rem;
+}
+
+h1 {
+  color: #222;
+  font-family: "Baloo 2";
+  font-size: 6rem;
+  font-style: normal;
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
+}
+
+h2 {
+  color: whitesmoke;
+  font-family: "Baloo 2";
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  text-align: center;
+}
+
+.change-color {
+  color: #ffd42e;
+}
+.header p {
+  min-width: 70%;
+  max-width: 70%;
+  color: #000;
+  font-family: "roboto mono", monospace;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+}
+
+.flag-card {
+  display: flex;
+  width: 23.1875rem;
+  min-width: 23.1875rem;
+  padding: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-shrink: 0;
+  border-radius: 1rem;
+  border: 2px solid #ffd42e;
+  background: rgba(34, 34, 34, 1);
+  overflow: hidden; /* NE DOZVOLJAVA da se vidi deo slike van kartice */
+  position: relative;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+#welcomeCard {
+  transition: all 0.3s ease-in-out;
+}
+.lottie-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border-radius: 1rem;
+}
+
+.flag-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.buttons {
+  margin-top: 0;
+}
+
+button {
+  padding: 10px 10px;
+  margin: 0px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: "roboto mono", monospace;
+}
+
+.get-btn {
+  background-color: #ffd42e;
+}
+
+.reveal-btn {
+  background-color: #2eff7e;
+  margin-left: 1rem;
+}
+
+p.country-info {
+  font-family: "roboto mono", monospace;
+  font-size: 1rem;
+  color: whitesmoke;
+  margin-top: 0;
+  font-stretch: condensed;
+}
+
+.hidden {
+  display: none;
+}
+
+.bold-start {
+  font-weight: 600;
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.flag-animate {
+  animation: slideInFromRight 0.6s ease-out;
+}
+
+/* Animacija dolaska odozgo */
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px); /* Element počinje iznad */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Element se pomera na svoju početnu poziciju */
+  }
+}
+
+/* Stil za .header */
+.header {
+  opacity: 0;
+  animation: slideDown 1.5s ease-out forwards; /* Animacija traje 1.5 sekundi */
+}
+
+/* Stil za h1 u headeru */
+.header h1 {
+  opacity: 0;
+  animation: slideDown 1.5s ease-out 0.2s forwards; /* Početni delay za h1 */
+}
+
+/* Stil za p u headeru */
+.header p {
+  opacity: 0;
+  animation: slideDown 1.5s ease-out 0.4s forwards; /* Početni delay za p */
+}
