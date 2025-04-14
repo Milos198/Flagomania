@@ -1,5 +1,3 @@
-// Podaci o evropskim zemljama sa linkovima ka zastavama
-// Podaci o evropskim zemljama sa linkovima ka zastavama sa Flagpedia
 const countries = [
   {
     name: "Albania",
@@ -307,45 +305,35 @@ const countries = [
 let currentCountry = null;
 
 function showRandomFlag() {
-  // Sakrij Lottie animaciju i prikaži zastavu
   document.getElementById("lottieContainer").classList.add("hidden");
   document.getElementById("flagImage").classList.remove("hidden");
 
-  // Nasumični izbor zemlje
   const randomIndex = Math.floor(Math.random() * countries.length);
   currentCountry = countries[randomIndex];
 
-  // Pronađi sliku zastave
   const flagImage = document.getElementById("flagImage");
 
-  // Prikaži zastavu
   flagImage.src = currentCountry.flag;
 
-  // Pokreni animaciju: ukloni prethodnu klasu, resetuj, pa dodaj ponovo
   flagImage.classList.remove("flag-animate");
-  void flagImage.offsetWidth; // reset animacije
+  void flagImage.offsetWidth;
   flagImage.classList.add("flag-animate");
 
-  // Sakrij ime i opis zemlje dok ne klikne Reveal
   document.getElementById("countryName").classList.add("hidden");
   document.getElementById("countryDesc").classList.add("hidden");
 
-  // Resetuj tekst
   document.getElementById("countryName").textContent = "";
   document.getElementById("countryDesc").textContent = "";
 
-  // Prikaži uputstvo ponovo
   document.getElementById("instructionsTitle").classList.remove("hidden");
   document.getElementById("instructionsText").classList.remove("hidden");
 
-  // Omogući dugme za Reveal
   document.querySelector(".reveal-btn").disabled = false;
 }
 
 function revealCountry() {
   if (!currentCountry) return;
 
-  // Prikaz imena i opisa zemlje
   document.getElementById("countryName").textContent = currentCountry.name;
   document.getElementById("countryDesc").textContent =
     currentCountry.description;
@@ -353,10 +341,8 @@ function revealCountry() {
   document.getElementById("countryName").classList.remove("hidden");
   document.getElementById("countryDesc").classList.remove("hidden");
 
-  // Sakrij uputstvo
   document.getElementById("instructionsTitle").classList.add("hidden");
   document.getElementById("instructionsText").classList.add("hidden");
 
-  // Onemogući dugme da se ne klikne više puta
   document.querySelector(".reveal-btn").disabled = true;
 }

@@ -30,7 +30,6 @@
       </div>
 
       <div class="flag-card">
-        <!-- Lottie animation shown initially -->
         <div class="lottie-container" id="lottieContainer">
           <dotlottie-player
             src="https://lottie.host/9f237328-cf19-452b-b94f-86ff8da0339c/5W2c2c4DX0.json"
@@ -42,7 +41,6 @@
           ></dotlottie-player>
         </div>
 
-        <!-- Flag image (hidden by default) -->
         <img
           id="flagImage"
           class="flag-img hidden"
@@ -50,7 +48,6 @@
           alt="Flag will appear here"
         />
 
-        <!-- Country info (hidden by default) -->
         <h2 id="countryName" class="hidden"></h2>
         <p id="countryDesc" class="country-info hidden"></p>
 
@@ -58,8 +55,10 @@
         <p id="instructionsText" class="country-info">
           <span class="change-color">Click the button </span>
           to see a random flag from somewhere in Europe. Try to guess the
-          country in your head — if you're not sure, click "Reveal Country" to
-          check the answer.
+          country in your head — if you're not sure, click "<span
+            class="change-colorbutton"
+            >Reveal Country</span
+          >" to check the answer.
         </p>
 
         <div class="buttons">

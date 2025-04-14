@@ -52,7 +52,7 @@ body {
   color: #222;
   max-width: 70%;
   min-width: 29.8125rem;
-  gap: 1rem;
+  padding-top: 3rem;
 }
 
 h1 {
@@ -61,8 +61,12 @@ h1 {
   font-size: 6rem;
   font-style: normal;
   font-weight: 600;
-  margin: 0;
   text-align: center;
+  margin: 0;
+  padding-bottom: 1.5rem;
+  line-height: 1;
+  display: inline-block;
+  padding-bottom: 2rem;
 }
 
 h2 {
@@ -74,10 +78,16 @@ h2 {
   line-height: normal;
   margin: 0;
   text-align: center;
+  line-height: 1;
+  display: inline-block;
+  padding-top: 0.25rem;
 }
 
 .change-color {
   color: #ffd42e;
+}
+.change-colorbutton {
+  color: #2eff7e;
 }
 .header p {
   min-width: 70%;
@@ -90,21 +100,26 @@ h2 {
   line-height: normal;
   text-align: center;
 }
+p {
+  margin: 0;
+  padding-bottom: 1rem;
+}
 
 .flag-card {
   display: flex;
-  width: 23.1875rem;
-  min-width: 23.1875rem;
+  width: 21rem;
+  min-width: 21rem;
+  min-height: 35rem;
   padding: 2rem;
   flex-direction: column;
-  justify-content: center;
+  justify-content: top;
   align-items: flex-start;
   gap: 1rem;
   flex-shrink: 0;
   border-radius: 1rem;
   border: 2px solid #ffd42e;
   background: rgba(34, 34, 34, 1);
-  overflow: hidden; /* NE DOZVOLJAVA da se vidi deo slike van kartice */
+  overflow: hidden;
   position: relative;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
@@ -129,7 +144,7 @@ h2 {
 }
 
 .buttons {
-  margin-top: 0;
+  margin-top: auto;
 }
 
 button {
@@ -182,32 +197,28 @@ p.country-info {
   animation: slideInFromRight 0.6s ease-out;
 }
 
-/* Animacija dolaska odozgo */
 @keyframes slideDown {
   0% {
     opacity: 0;
-    transform: translateY(-30px); /* Element počinje iznad */
+    transform: translateY(-30px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0); /* Element se pomera na svoju početnu poziciju */
+    transform: translateY(0);
   }
 }
 
-/* Stil za .header */
 .header {
   opacity: 0;
-  animation: slideDown 1.5s ease-out forwards; /* Animacija traje 1.5 sekundi */
-}
+  animation: slideDown 1.5s ease-out forwards;
 
-/* Stil za h1 u headeru */
-.header h1 {
-  opacity: 0;
-  animation: slideDown 1.5s ease-out 0.2s forwards; /* Početni delay za h1 */
-}
+  .header h1 {
+    opacity: 0;
+    animation: slideDown 1.5s ease-out 0.2s forwards;
+  }
 
-/* Stil za p u headeru */
-.header p {
-  opacity: 0;
-  animation: slideDown 1.5s ease-out 0.4s forwards; /* Početni delay za p */
+  .header p {
+    opacity: 0;
+    animation: slideDown 1.5s ease-out 0.4s forwards;
+  }
 }
